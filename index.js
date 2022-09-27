@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyparser = require('body-parser');
-const { transporter, mailOptions } = require('./emailHandler');
+const { transporter } = require('./emailHandler');
 
 const app = express();
 const port = 5050;
