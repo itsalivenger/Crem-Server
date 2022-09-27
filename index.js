@@ -26,11 +26,11 @@ app.post('/', (req, res)=>{
     transporter.sendMail(mailOptions, (err, data)=>{
         if(err){
             console.log('error Occured f had blasa : ', err);
+            res.send({msg: 'there was an error'});
         }else{
-            console.log('email sent successefully');
+            res.send({msg: 'email sent successefully'});
         }
     })
-    res.send({msg: 'noted'});
 })
 
 app.listen(port, ()=>{
