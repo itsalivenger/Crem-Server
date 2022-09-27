@@ -7,13 +7,13 @@ const app = express();
 const port = 5050;
 
 app.use(cors({
-    origin: 'https://itsalivenger.github.io/Crem-Dev/',
-    credentials: true
+    origin: 'https://itsalivenger.github.io/Crem-Dev'
 }));
 
 app.use(bodyparser.json());
 
 app.post('/', (req, res)=>{
+    console.log('post')
     let { name, email, subject, message } = req.body;
     const mailOptions = {
         from: 'alihoussa16@gmail.com',
@@ -29,6 +29,7 @@ app.post('/', (req, res)=>{
             console.log('error Occured f had blasa : ', err);
             res.send({msg: 'there was an error'});
         }else{
+            console.log('email sent successefully')
             res.send({msg: 'email sent successefully'});
         }
     })
