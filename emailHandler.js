@@ -8,11 +8,4 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const mailOptions = {
-    from: 'alihoussa16@gmail.com',
-    to: 'alihoussa16@gmail.com',
-    subject: 'text',
-    text: 'dzajdlazkjdlazkjd'
-}
-
 module.exports = {transporter, mailOptions};

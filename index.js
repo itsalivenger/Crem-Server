@@ -13,9 +13,16 @@ app.use(cors({
 app.use(bodyparser.json());
 
 app.post('/', (req, res)=>{
-    console.log(req.body, req.hostname)
-    // let { name, email, subject, message } = req.body;
-    // console.log(name)
+    let { name, email, subject, message } = req.body;
+    const mailOptions = {
+        from: 'alihoussa16@gmail.com',
+        to: 'alihoussa16@gmail.com',
+        subject: subject,
+        text: `name: ${name} \n
+                email: ${email}\n
+            ${message}`
+    }
+
     transporter.sendMail(mailOptions, (err, data)=>{
         if(err){
             console.log('error Occured f had blasa : ', err);
