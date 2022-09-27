@@ -7,7 +7,7 @@ const app = express();
 const port = 5050;
 
 app.use(cors({
-    origin: `https://itsalivenger.github.io*`
+    origin: `https://itsalivenger.github.io/Crem-Dev/`
 }));
 
 app.use(bodyparser.json());
