@@ -6,9 +6,7 @@ const { transporter } = require('./emailHandler');
 const app = express();
 const port = 5050;
 
-app.use(cors({
-    origin: 'https://itsalivenger.github.io'
-}));
+app.use(cors({}));
 
 app.use(bodyparser.json());
 
