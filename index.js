@@ -9,7 +9,8 @@ const port = 5050;
 app.use(cors({
     origin: [`*`, 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev'],
     methods: ['GET, POST'],
-    credentials: true
+    credentials: true,
+    preflightContinue: true
 }));
 
 app.use(bodyparser.json());
