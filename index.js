@@ -7,7 +7,8 @@ const app = express();
 const port = 5050;
 
 app.use(cors({
-    origin: [`*`, 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev'],
+    origin: [`*`, 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev', 
+'https://itsalivenger.github.io', 'https://itsalivenger.github.io/'],
     methods: ['GET, POST'],
     credentials: true,
     preflightContinue: true
