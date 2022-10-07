@@ -38,6 +38,11 @@ app.post('/', (req, res)=>{
     res.send({msg: 'noted'})
 })
 
+app.get('/', (req, res)=>{
+    res.send('molle-e');
+});
+
+
 app.listen(port, ()=>{
     console.log('listening');
 });
