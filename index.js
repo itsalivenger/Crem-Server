@@ -14,8 +14,16 @@ app.use(cors({
 
 app.use(bodyparser.json());
 
-app.post('/', (req, res)=>{
-    console.log('post')
+app.post('/', async (req, res)=>{
+    const sendMsg = async ()=> await transporter.sendMail(mailOptions, (err, data)=>{
+        if(err){
+            console.log('error Occured f had blasa : ', err);
+            res.send({msg: 'there was an error'});
+        }else{
+            console.log('email sent successefully')
+            res.send({msg: 'email sent successefully', data});
+        }
+    })
     let { name, email, subject, message } = req.body;
     const mailOptions = {
         from: 'alihoussa16@gmail.com',
@@ -26,15 +34,7 @@ app.post('/', (req, res)=>{
             ${message}`
     }
 
-    transporter.sendMail(mailOptions, (err, data)=>{
-        if(err){
-            console.log('error Occured f had blasa : ', err);
-            res.send({msg: 'there was an error'});
-        }else{
-            console.log('email sent successefully')
-            res.send({msg: 'email sent successefully'});
-        }
-    })
+    await sendMsg();
     res.send({msg: 'noted'})
 })
 
