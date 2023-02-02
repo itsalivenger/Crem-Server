@@ -32,10 +32,10 @@ app.post('/', async (req, res)=>{
         transporter.sendMail(mailOptions, (err, data)=>{
             if(err){
                 console.log('error Occured f had blasa : ', err);
-                res.send({msg: 'there was an error'});
+                res.send({msg: 'there was an error', state: false});
             }else{
                 console.log('email sent successefully')
-                res.send({msg: 'email sent successefully', data});
+                res.send({msg: 'email sent successefully', data, state: true});
             }
         })
     });
