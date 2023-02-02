@@ -19,7 +19,7 @@ app.post('/', async (req, res)=>{
     let { name, email, subject, message } = req.body;
     const mailOptions = {
         from: 'alihoussa16@gmail.com',
-        to: 'alihoussa16@gmail.com',
+        to: 'alihoussa16@gmail.com, cremcreations@gmail.com',
         subject: subject,
         text: `name: ${name} \n
                 email: ${email}\n
