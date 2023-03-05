@@ -3,7 +3,8 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 const { transporter } = require('./emailHandler');
 const origin = ["http://localhost:5000", 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev', 
-'https://itsalivenger.github.io', 'https://itsalivenger.github.io/'];
+'https://itsalivenger.github.io', 'https://itsalivenger.github.io/', 'https://www.cremcreations.live'
+, 'https://www.cremcreations.com'];
 const app = express();
 const port = process.env.PORT || 5050;
 
