@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const { transporter } = require('./emailHandler');
+// ila baqi jak error ta3 cors try had approach o hyed / flkher ta3 URL ila kant
 const origin = ["http://localhost:5000", 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev', 
 'https://itsalivenger.github.io', 'https://itsalivenger.github.io/', 'https://cremcreations.live'
 , 'https://www.cremcreations.com'];
@@ -21,7 +22,7 @@ app.post('/', async (req, res)=>{
 
     const mailOptions = {
         from: 'alihoussa16@gmail.com',
-        to: name === 'houbi' ? 'alihoussa16@gmail.com' : 'alihoussa16@gmail.com, cremcreations@gmail.com',
+        to: name === 'houbek' ? 'alihoussa16@gmail.com' : 'alihoussa16@gmail.com, cremcreations@gmail.com',
         subject: subject,
         text: `name: ${name} \n
                 email: ${email}\n
