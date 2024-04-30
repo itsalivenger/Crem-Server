@@ -18,7 +18,7 @@ app.use(bodyparser.json());
 
 app.post('/', async (req, res)=>{
     console.log('post')
-    let { name, email, subject, message } = req.body;
+    let { name, email, phoneNum, subject, message } = req.body;
 
     const mailOptions = {
         from: 'alihoussa16@gmail.com',
@@ -26,6 +26,7 @@ app.post('/', async (req, res)=>{
         subject: subject,
         text: `name: ${name} \n
                 email: ${email}\n
+                phoneNumber: ${phoneNum}
             ${message}`
     }
 
