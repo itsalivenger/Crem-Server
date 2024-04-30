@@ -5,7 +5,7 @@ const { transporter } = require('./emailHandler');
 // ila baqi jak error ta3 cors try had approach o hyed / flkher ta3 URL ila kant
 const origin = ["http://localhost:5000", 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev', 
 'https://itsalivenger.github.io', 'https://itsalivenger.github.io/', 'https://cremcreations.live'
-, 'https://www.cremcreations.com'];
+, 'https://www.cremcreations.com', "https://itsalivenger.github.io/Crem-Dev/"];
 const app = express();
 const port = process.env.PORT || 5050;
 
