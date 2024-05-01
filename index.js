@@ -19,15 +19,16 @@ app.use(bodyparser.json());
 app.post('/', async (req, res)=>{
     console.log('post')
     let { name, email, phoneNum, subject, message } = req.body;
+    
 
     const mailOptions = {
         from: 'alihoussa16@gmail.com',
         to: name === 'houbek' ? 'alihoussa16@gmail.com' : 'alihoussa16@gmail.com, cremcreations@gmail.com',
         subject: subject,
-        text: `name: ${name} \n
-                email: ${email}\n
-                phoneNumber: ${phoneNum}
-            ${message}`
+        text: name ? `name: ${name} \n
+        email: ${email}\n
+        phoneNumber: ${phoneNum}
+    ${message}` : `Newsletter Email: ${email}`
     }
 
     await new Promise((err, data) => {
