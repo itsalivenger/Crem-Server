@@ -3,15 +3,14 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 const { transporter } = require('./emailHandler');
 // ila baqi jak error ta3 cors try had approach o hyed / flkher ta3 URL ila kant
-const origin = ["http://localhost:5000", 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev', 
+const origin = ["http://localhost:5500", 'https://itsalivenger.github.io/Crem-Dev/', 'https://itsalivenger.github.io/Crem-Dev', 
 'https://itsalivenger.github.io', 'https://itsalivenger.github.io/', 'https://cremcreations.live'
 , 'https://www.cremcreations.com', "https://itsalivenger.github.io/Crem-Dev/"];
 const app = express();
 const port = process.env.PORT || 5050;
 
 app.use(cors({
-    origin: origin,
-    credentials: true
+    origin: origin
 }));
 
 app.use(bodyparser.json());
@@ -36,14 +35,14 @@ app.post('/', async (req, res)=>{
         transporter.sendMail(mailOptions, (err, data)=>{
             if(err){
                 console.log('error Occured f had blasa : ', err);
-                res.send({msg: 'there was an error', state: false, err});
+                res.send({msg: 'there was an error', state: false, err, name});
             }else{
                 console.log('email sent successefully')
-                res.send({msg: 'email sent successefully', data, state: true});
+                res.send({msg: 'email sent successefully', data, state: true, name});
             }
         })
     });
-    res.send({msg: 'noted'})
+    // res.send({msg: 'noted'})
 })
 
 app.get('/', (req, res)=>{
